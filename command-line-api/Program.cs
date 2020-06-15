@@ -3,15 +3,15 @@ using System.CommandLine;
 using System.CommandLine.Invocation;
 using System.Threading.Tasks;
 
-class Program
+public class Program
 {
-    public string StringOption { get; set; }
-    public bool BoolOption { get; set; }
+    public string String { get; set; }
+    public bool Bool { get; set; }
 
     static void Run(Program options)
     {
-        Console.WriteLine($"Bool option: {options.BoolOption}");
-        Console.WriteLine($"String option: {options.StringOption}");
+        Console.WriteLine($"Bool option: {options.Bool}");
+        Console.WriteLine($"String option: {options.String}");
     }
 
     private static async Task<int> Main(string[] args)
