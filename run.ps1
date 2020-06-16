@@ -10,3 +10,6 @@ Measure-Command { ./command-line-api/bin/Release/netcoreapp3.1/publish/command-l
 
 Write-Output "command-line-api-2:"
 Measure-Command { ./command-line-api-2/bin/Release/netcoreapp3.1/publish/command-line-api-2 -s Hello } | foreach { $_.TotalMilliseconds }
+
+Write-Output "command-line-api-3:"
+Measure-Command { ./command-line-api-3/bin/Release/netcoreapp3.1/publish/command-line-api-3 -s Hello } | foreach { $_.TotalMilliseconds }
