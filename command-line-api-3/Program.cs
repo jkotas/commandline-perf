@@ -1,8 +1,6 @@
 ﻿using System;
 using System.CommandLine;
-using System.CommandLine.Invocation;
 using System.CommandLine.Parsing;
-using System.Threading.Tasks;
 
 public class Program
 {
@@ -15,7 +13,7 @@ public class Program
         Console.WriteLine($"String option: {options.String}");
     }
 
-    private static async Task<int> Main(string[] args)
+    private static int Main(string[] args)
     {
         var boolOption = new Option<bool>(new[] { "--bool", "-b" }, "Bool option");
         var stringOption = new Option<string>(new[] { "--string", "-s" }, "String option");
@@ -26,18 +24,18 @@ public class Program
             stringOption
         };
 
-        command.Handler = CommandHandler.Create<ParseResult>(parseResult =>
-        {
-            var model = new Program
-            {
-                Bool = parseResult.ValueForOption<bool>(boolOption.Name),
-                String = parseResult.ValueForOption<string>(stringOption.Name),
-            };
-            Run(model);
-        });
-
         var parser = new Parser(command);
 
-        return await parser.InvokeAsync(args);
+        var parseResult = parser.Parse(args);
+
+        var model = new Program
+        {
+            Bool = parseResult.ValueForOption<bool>(boolOption.Name),
+            String = parseResult.ValueForOption<string>(stringOption.Name),
+        };
+
+        Run(model);
+
+        return 1;
     }
 }
