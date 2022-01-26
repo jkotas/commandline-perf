@@ -1,12 +1,13 @@
 ﻿using System;
 using System.CommandLine;
+using System.Threading.Tasks;
 
 class Program
 {
     string _stringOption = "";
     bool _boolOption;
 
-    int Run(string[] args)
+    Task<int> Run(string[] args)
     {
         ArgumentSyntax argSyntax = ArgumentSyntax.Parse(args, syntax =>
         {
@@ -17,10 +18,10 @@ class Program
         Console.WriteLine($"Bool option: {_boolOption}");
         Console.WriteLine($"String option: {_stringOption}");
 
-        return 0;
+        return Task.FromResult<int>(0);
     }
 
-    static int Main(string[] args)
+    static Task<int> Main(string[] args)
     {
         return new Program().Run(args);
     }

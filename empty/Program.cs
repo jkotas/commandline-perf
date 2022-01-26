@@ -1,12 +1,19 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace empty
 {
     class Program
     {
-        static void Main(string[] args)
+        static Task<int> Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string stringOption = "";
+            bool boolOption = false;
+            
+            Console.WriteLine($"Bool option: {stringOption}");
+            Console.WriteLine($"String option: {boolOption}");
+            
+            return Task.FromResult<int>(0);
         }
     }
 }
