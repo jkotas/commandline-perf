@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.CommandLine" Version="0.1.0-e160909-1" />
+    <ProjectReference Include="..\corefxlab_lib\System.CommandLine\System.CommandLine.csproj" />
   </ItemGroup>
 
 </Project>
