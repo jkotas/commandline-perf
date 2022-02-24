@@ -3,12 +3,23 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
+    <!--<TrimMode>link</TrimMode>
+    <IlcGenerateCompleteTypeMetadata>True</IlcGenerateCompleteTypeMetadata>
+    <IlcGenerateStackTraceData>True</IlcGenerateStackTraceData>
+    <EnsureNETCoreAppRuntime>false</EnsureNETCoreAppRuntime>
+    --><!-- workaround for 'This runtime may not be supported by.NET Core.' error --><!--
+    <ValidateExecutableReferencesMatchSelfContained>false</ValidateExecutableReferencesMatchSelfContained>-->
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="..\after\Program.cs" Link="Program.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="System.CommandLine">
-      <HintPath>System.CommandLine.dll</HintPath>
+      <HintPath>..\after\System.CommandLine.dll</HintPath>
     </Reference>
+    <PackageReference Include="Microsoft.DotNet.ILCompiler" Version="6.0.0-*" />
   </ItemGroup>
 
 </Project>

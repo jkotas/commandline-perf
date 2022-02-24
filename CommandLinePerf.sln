@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "command-line-api-before", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "command-line-api-after", "command-line-api\after\command-line-api-after.csproj", "{B5D37CD1-8897-4CC0-A7D9-B5C8851B8714}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "command-line-api-after-r2r", "command-line-api\after_r2r\command-line-api-after-r2r.csproj", "{FDC07F70-77CC-4609-A356-5039E8E17F83}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "command-line-api-after-aot", "command-line-api\after_aot\command-line-api-after-aot.csproj", "{B1AAEBB7-8FA0-4044-8E02-48A3B1016DFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,14 @@ Global
 		{B5D37CD1-8897-4CC0-A7D9-B5C8851B8714}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5D37CD1-8897-4CC0-A7D9-B5C8851B8714}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5D37CD1-8897-4CC0-A7D9-B5C8851B8714}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDC07F70-77CC-4609-A356-5039E8E17F83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC07F70-77CC-4609-A356-5039E8E17F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC07F70-77CC-4609-A356-5039E8E17F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC07F70-77CC-4609-A356-5039E8E17F83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1AAEBB7-8FA0-4044-8E02-48A3B1016DFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1AAEBB7-8FA0-4044-8E02-48A3B1016DFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1AAEBB7-8FA0-4044-8E02-48A3B1016DFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1AAEBB7-8FA0-4044-8E02-48A3B1016DFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
