@@ -11,7 +11,7 @@ namespace empty
 
             Console.WriteLine($"Bool option: {stringOption}");
             Console.WriteLine($"String option: {boolOption}");
-            
+
             return 0;
         }
     }
