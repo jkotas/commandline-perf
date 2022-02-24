@@ -1,8 +1,8 @@
 ﻿using System;
 using System.CommandLine;
 using System.CommandLine.Builder;
+using System.CommandLine.Invocation;
 using System.CommandLine.Parsing;
-using System.Threading.Tasks;
 
 public class Program
 {
@@ -12,7 +12,7 @@ public class Program
         Console.WriteLine($"String option: {boolean}");
     }
 
-    private static Task<int> Main(string[] args)
+    private static int Main(string[] args)
     {
         Option<bool> boolOption = new Option<bool>(new[] { "--bool", "-b" }, "Bool option");
         Option<string> stringOption = new Option<string>(new[] { "--string", "-s" }, "String option");
@@ -23,8 +23,8 @@ public class Program
             stringOption
         };
 
-        command.SetHandler<bool, string>(Run, boolOption, stringOption);
+        command.Handler = CommandHandler.Create<bool, string>(boolOption, stringOption, Run);
 
-        return new CommandLineBuilder(command).Build().InvokeAsync(args);
+        return new CommandLineBuilder(command).Build().Invoke(args);
     }
 }

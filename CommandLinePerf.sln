@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32113.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "empty", "empty\empty.csproj", "{CC3ECB48-2F7F-49F8-BC1D-A8E6BC07EBB7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.CommandLine", "corefxlab\lib\System.CommandLine.csproj", "{7C04D5C7-976C-4850-97E7-C7448922046B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "corefxlab", "corefxlab\app\corefxlab.csproj", "{ACCA1EBA-2E8D-4615-A381-0748CF6A0CC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "corefxlab_src", "corefxlab_src", "{A43BB2B5-5798-4DE3-AC95-2E9781D10D3C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "command-line-api-before", "command-line-api\before\command-line-api-before.csproj", "{CA67B6C2-3E69-4832-92BC-D566AE21FC9A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "command-line-api-after", "command-line-api\after\command-line-api-after.csproj", "{B5D37CD1-8897-4CC0-A7D9-B5C8851B8714}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC3ECB48-2F7F-49F8-BC1D-A8E6BC07EBB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC3ECB48-2F7F-49F8-BC1D-A8E6BC07EBB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC3ECB48-2F7F-49F8-BC1D-A8E6BC07EBB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC3ECB48-2F7F-49F8-BC1D-A8E6BC07EBB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C04D5C7-976C-4850-97E7-C7448922046B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C04D5C7-976C-4850-97E7-C7448922046B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C04D5C7-976C-4850-97E7-C7448922046B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C04D5C7-976C-4850-97E7-C7448922046B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACCA1EBA-2E8D-4615-A381-0748CF6A0CC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACCA1EBA-2E8D-4615-A381-0748CF6A0CC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACCA1EBA-2E8D-4615-A381-0748CF6A0CC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACCA1EBA-2E8D-4615-A381-0748CF6A0CC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA67B6C2-3E69-4832-92BC-D566AE21FC9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA67B6C2-3E69-4832-92BC-D566AE21FC9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA67B6C2-3E69-4832-92BC-D566AE21FC9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA67B6C2-3E69-4832-92BC-D566AE21FC9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5D37CD1-8897-4CC0-A7D9-B5C8851B8714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5D37CD1-8897-4CC0-A7D9-B5C8851B8714}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5D37CD1-8897-4CC0-A7D9-B5C8851B8714}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5D37CD1-8897-4CC0-A7D9-B5C8851B8714}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7C04D5C7-976C-4850-97E7-C7448922046B} = {A43BB2B5-5798-4DE3-AC95-2E9781D10D3C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54487E81-A5B4-4C05-9365-E7C6FB74ABC0}
+	EndGlobalSection
+EndGlobal
