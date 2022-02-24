@@ -32,6 +32,11 @@ namespace Harness
             => RunProcess(Path.Combine(RootFolderPath.Value, "empty", "bin", "Release", "net6.0", $"empty{ExeExtension}"));
 
         [Benchmark]
+        public int EmptyAOT()
+            => RunProcess(Path.Combine(RootFolderPath.Value, "empty-aot", "bin", "Release", "net6.0",
+                GetPortableRuntimeIdentifier(), "publish", $"empty-aot{ExeExtension}"));
+
+        [Benchmark]
         public int Corefxlab()
             => RunProcess(Path.Combine(RootFolderPath.Value, "corefxlab", "app", "bin", "Release", "net6.0", $"corefxlab{ExeExtension}"));
 
