@@ -14,7 +14,10 @@ namespace Harness
     {
         static void Main(string[] args) => BenchmarkRunner.Run<Perf_Startup>(
             DefaultConfig.Instance
-                .AddJob(Job.Default.WithWarmupCount(1).WithIterationCount(20)),
+                .AddJob(Job.Default
+                    .WithWarmupCount(1)
+                    .RunOncePerIteration()
+                    .WithIterationCount(20)),
             args);
     }
 
@@ -22,8 +25,8 @@ namespace Harness
     {
         private Lazy<string> RootFolderPath = new Lazy<string>(GetRootFolderPath);
 
-        [Params(new string[0], new string[] { "--bool", "-s", "test" })]
-        public string[] Args { get; set; }
+        [Params("", "--bool -s test")]
+        public string Args { get; set; }
 
         public string ExeExtension => OperatingSystem.IsWindows() ? ".exe" : "";
 
@@ -82,12 +85,7 @@ namespace Harness
 
         private int RunProcess(string executablePath)
         {
-            ProcessStartInfo processStartInfo = new ProcessStartInfo(executablePath);
-
-            foreach (string arg in Args)
-            {
-                processStartInfo.ArgumentList.Add(arg);
-            }
+            ProcessStartInfo processStartInfo = new ProcessStartInfo(executablePath, Args);
 
             using Process process = Process.Start(processStartInfo);
             process.WaitForExit();
