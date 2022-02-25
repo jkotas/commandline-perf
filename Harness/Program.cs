@@ -37,7 +37,7 @@ namespace Harness
         [Benchmark]
         public int EmptyAOT()
             => RunProcess(Path.Combine(RootFolderPath.Value, "empty-aot", "bin", "Release", "net6.0",
-                GetPortableRuntimeIdentifier(), "publish", $"empty-aot{ExeExtension}"));
+                GetPortableRuntimeIdentifier(), "native", $"empty-aot{ExeExtension}"));
 
         [Benchmark]
         public int Corefxlab()
@@ -59,7 +59,7 @@ namespace Harness
         [Benchmark]
         public int SystemCommandLineAfterAOT()
             => RunProcess(Path.Combine(RootFolderPath.Value, "command-line-api", "after_aot", "bin", "Release", "net6.0",
-                    GetPortableRuntimeIdentifier(), "publish", $"command-line-api-after-aot{ExeExtension}"));
+                    GetPortableRuntimeIdentifier(), "native", $"command-line-api-after-aot{ExeExtension}"));
 
         private static string GetRootFolderPath()
         {
