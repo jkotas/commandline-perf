@@ -32,33 +32,33 @@ namespace Harness
 
         [Benchmark]
         public int Empty()
-            => RunProcess(Path.Combine(RootFolderPath.Value, "empty", "bin", "Release", "net6.0", $"empty{ExeExtension}"));
+            => RunProcess(Path.Combine(RootFolderPath.Value, "empty", "bin", "Release", "net7.0", GetPortableRuntimeIdentifier(), "publish", $"empty{ExeExtension}"));
 
         [Benchmark]
         public int EmptyAOT()
-            => RunProcess(Path.Combine(RootFolderPath.Value, "empty-aot", "bin", "Release", "net6.0",
+            => RunProcess(Path.Combine(RootFolderPath.Value, "empty-aot", "bin", "Release", "net7.0",
                 GetPortableRuntimeIdentifier(), "native", $"empty-aot{ExeExtension}"));
 
         [Benchmark]
         public int Corefxlab()
-            => RunProcess(Path.Combine(RootFolderPath.Value, "corefxlab", "app", "bin", "Release", "net6.0", $"corefxlab{ExeExtension}"));
+            => RunProcess(Path.Combine(RootFolderPath.Value, "corefxlab", "app", "bin", "Release", "net7.0", GetPortableRuntimeIdentifier(), "publish", $"corefxlab{ExeExtension}"));
 
         [Benchmark]
         public int SystemCommandLineBefore()
-            => RunProcess(Path.Combine(RootFolderPath.Value, "command-line-api", "before", "bin", "Release", "net6.0", $"command-line-api-before{ExeExtension}"));
+            => RunProcess(Path.Combine(RootFolderPath.Value, "command-line-api", "before", "bin", "Release", "net7.0", GetPortableRuntimeIdentifier(), "publish", $"command-line-api-before{ExeExtension}"));
 
         [Benchmark]
         public int SystemCommandLineAfter()
-            => RunProcess(Path.Combine(RootFolderPath.Value, "command-line-api", "after", "bin", "Release", "net6.0", $"command-line-api-after{ExeExtension}"));
+            => RunProcess(Path.Combine(RootFolderPath.Value, "command-line-api", "after", "bin", "Release", "net7.0", GetPortableRuntimeIdentifier(), "publish", $"command-line-api-after{ExeExtension}"));
 
         [Benchmark]
         public int SystemCommandLineAfterR2R()
-            => RunProcess(Path.Combine(RootFolderPath.Value, "command-line-api", "after_r2r", "bin", "Release", "net6.0",
+            => RunProcess(Path.Combine(RootFolderPath.Value, "command-line-api", "after_r2r", "bin", "Release", "net7.0",
                     GetPortableRuntimeIdentifier(), "publish", $"command-line-api-after-r2r{ExeExtension}"));
 
         [Benchmark]
         public int SystemCommandLineAfterAOT()
-            => RunProcess(Path.Combine(RootFolderPath.Value, "command-line-api", "after_aot", "bin", "Release", "net6.0",
+            => RunProcess(Path.Combine(RootFolderPath.Value, "command-line-api", "after_aot", "bin", "Release", "net7.0",
                     GetPortableRuntimeIdentifier(), "native", $"command-line-api-after-aot{ExeExtension}"));
 
         private static string GetRootFolderPath()
