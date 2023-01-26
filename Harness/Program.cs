@@ -3,6 +3,8 @@ using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 using Microsoft.DotNet.PlatformAbstractions;
+using Perfolizer.Horology;
+using Perfolizer.Mathematics.OutlierDetection;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -15,9 +17,11 @@ namespace Harness
         static void Main(string[] args) => BenchmarkRunner.Run<Perf_Startup>(
             DefaultConfig.Instance
                 .AddJob(Job.Default
-                    .WithWarmupCount(1)
+                    .WithWarmupCount(3)
+                    .WithEvaluateOverhead(false)
+                    .WithOutlierMode(OutlierMode.DontRemove)
                     .RunOncePerIteration()
-                    .WithIterationCount(20)),
+                    .WithIterationCount(60)),
             args);
     }
 
@@ -44,22 +48,26 @@ namespace Harness
             => RunProcess(Path.Combine(RootFolderPath.Value, "corefxlab", "app", "bin", "Release", "net7.0", GetPortableRuntimeIdentifier(), "publish", $"corefxlab{ExeExtension}"));
 
         [Benchmark]
-        public int SystemCommandLineBefore()
-            => RunProcess(Path.Combine(RootFolderPath.Value, "command-line-api", "before", "bin", "Release", "net7.0", GetPortableRuntimeIdentifier(), "publish", $"command-line-api-before{ExeExtension}"));
+        public int SystemCommandLine2021()
+            => RunProcess(Path.Combine(RootFolderPath.Value, "command-line-api", "2021", "bin", "Release", "net7.0", GetPortableRuntimeIdentifier(), "publish", $"command-line-api-2021{ExeExtension}"));
 
         [Benchmark]
-        public int SystemCommandLineAfter()
-            => RunProcess(Path.Combine(RootFolderPath.Value, "command-line-api", "after", "bin", "Release", "net7.0", GetPortableRuntimeIdentifier(), "publish", $"command-line-api-after{ExeExtension}"));
+        public int SystemCommandLine2022()
+            => RunProcess(Path.Combine(RootFolderPath.Value, "command-line-api", "2022", "bin", "Release", "net7.0", GetPortableRuntimeIdentifier(), "publish", $"command-line-api-2022{ExeExtension}"));
+
+        [Benchmark(Baseline = true)]
+        public int SystemCommandLineNow()
+            => RunProcess(Path.Combine(RootFolderPath.Value, "command-line-api", "now", "bin", "Release", "net7.0", GetPortableRuntimeIdentifier(), "publish", $"command-line-api-now{ExeExtension}"));
 
         [Benchmark]
-        public int SystemCommandLineAfterR2R()
-            => RunProcess(Path.Combine(RootFolderPath.Value, "command-line-api", "after_r2r", "bin", "Release", "net7.0",
-                    GetPortableRuntimeIdentifier(), "publish", $"command-line-api-after-r2r{ExeExtension}"));
+        public int SystemCommandLineNowR2R()
+            => RunProcess(Path.Combine(RootFolderPath.Value, "command-line-api", "now_r2r", "bin", "Release", "net7.0",
+                    GetPortableRuntimeIdentifier(), "publish", $"command-line-api-now-r2r{ExeExtension}"));
 
         [Benchmark]
-        public int SystemCommandLineAfterAOT()
-            => RunProcess(Path.Combine(RootFolderPath.Value, "command-line-api", "after_aot", "bin", "Release", "net7.0",
-                    GetPortableRuntimeIdentifier(), "native", $"command-line-api-after-aot{ExeExtension}"));
+        public int SystemCommandLineNowAOT()
+            => RunProcess(Path.Combine(RootFolderPath.Value, "command-line-api", "now_aot", "bin", "Release", "net7.0",
+                    GetPortableRuntimeIdentifier(), "native", $"command-line-api-now-aot{ExeExtension}"));
 
         private static string GetRootFolderPath()
         {

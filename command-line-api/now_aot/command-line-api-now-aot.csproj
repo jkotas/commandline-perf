@@ -13,12 +13,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="..\after\Program.cs" Link="Program.cs" />
+    <Compile Include="..\now\Program.cs" Link="Program.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="System.CommandLine">
-      <HintPath>..\after\System.CommandLine.dll</HintPath>
+      <HintPath>..\now\System.CommandLine.dll</HintPath>
     </Reference>
   </ItemGroup>
 
