@@ -21,7 +21,7 @@ namespace Harness
                     .WithEvaluateOverhead(false)
                     .WithOutlierMode(OutlierMode.DontRemove)
                     .RunOncePerIteration()
-                    .WithIterationCount(60)),
+                    .WithIterationCount(100)),
             args);
     }
 
