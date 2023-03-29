@@ -25,6 +25,6 @@ public class Program
 
         command.Handler = CommandHandler.Create<bool, string>(boolOption, stringOption, Run);
 
-        return new CommandLineBuilder(command).Build().Invoke(args);
+        return new CommandLineBuilder(command).UseDefaults().Build().Invoke(args);
     }
 }

@@ -24,6 +24,6 @@ public class Program
 
         command.SetHandler<bool, string>(Run, boolOption, stringOption);
 
-        return new CommandLineBuilder(command).Build().Invoke(args);
+        return new CommandLineBuilder(command).UseDefaults().Build().Invoke(args);
     }
 }
