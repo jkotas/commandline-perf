@@ -4,9 +4,15 @@ namespace empty
 {
     class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string stringOption = "test";
+            bool boolOption = true;
+
+            Console.WriteLine($"Bool option: {stringOption}");
+            Console.WriteLine($"String option: {boolOption}");
+
+            return 0;
         }
     }
 }
